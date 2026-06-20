@@ -1,0 +1,289 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main {
+    width: 360px;
+    min-height: 690px;
+    background-color: white;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+header {
+    background-color: #1A3C5E;
+    color: white;
+    padding: 14px;
+}
+
+header h1 {
+    margin: 0 0 12px;
+    font-size: 16px;
+}
+
+.toggle-btn {
+    background-color: rgba(143, 57, 57, 0.2);
+    color: white;
+    border: 1px solid white;
+    border-radius: 5px;
+    padding: 0px;
+    margin-bottom: 0px;
+    cursor: pointer;
+    font-size: 12px;
+    transition: all 0.2s ease;
+    margin-left: 5px;
+}
+
+.toggle-btn:hover {
+    background-color: white;
+    color: #1A3C5E;
+}
+
+.top-navigation {
+    display: flex;
+    gap: 6px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.top-navigation input {
+    flex: 1;
+    padding: 9px;
+    border: 1px solid #cccccc;
+    border-radius: 8px;
+    outline: none;
+}
+
+.top-navigation button {
+    padding: 9px 16px;
+    background-color: #2E86AB;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.2s ease;
+}
+
+.top-navigation button:hover {
+    background-color: #1A3C5E;
+}
+
+.history-container {
+    display: flex;
+    gap: 5px;
+    flex-wrap: wrap;
+}
+
+.history-btn {
+    background-color: white;
+    color: rgb(161, 95, 95);
+    border: none;
+    padding: 4px 8px;
+    border-radius: 5px;
+    font-size: 11px;
+    cursor: pointer;
+}
+
+p#error-message,
+p#loading-message {
+    text-align: center;
+    margin: 0;
+    padding: 5px;
+    font-size: 10px;
+    font-weight: bold;
+}
+
+p#error-message {
+    color: #d9534f;
+}
+
+p#loading-message {
+    color: #2E86AB;
+}
+
+.hero-section {
+    background-color: #2E86AB;
+    color: white;
+    margin-left: 12px;
+    margin-bottom: 12px;
+    margin-right: 12px;
+    padding: 35px 15px;
+    border-radius: 12px;
+    text-align: center;
+}
+
+#weather-icon {
+    font-size: 42px;
+    display: inline-block;
+    margin-bottom: 8px;
+}
+
+#location-display {
+    margin: 0 0 6px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+#temperature {
+    margin: 0;
+    font-size: 44px;
+    font-weight: bold;
+}
+
+#weather-description {
+    margin: 6px 0 0;
+    font-size: 13px;
+    opacity: 0.9;
+}
+
+.stats-section {
+    display: flex;
+    margin: 0 12px 12px;
+    padding: 12px 0;
+    border: 1px solid #e2e2e2;
+    border-radius: 12px;
+}
+
+#humidity,
+#wind-speed,
+#uv-index {
+    flex: 1;
+    text-align: center;
+    font-size: 12px;
+    color: #777;
+    border-right: 1px solid #e2e2e2;
+}
+
+#uv-index {
+    border-right: none;
+}
+
+#humidity .value,
+#wind-speed .value,
+#uv-index .value {
+    display: block;
+    margin-top: 5px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #1A3C5E;
+}
+
+.forecast-section {
+    margin: 0 12px;
+    padding-bottom: 20px;
+}
+
+.forecast-section h3 {
+    margin: 0 0 8px;
+    font-size: 12px;
+    color: #666;
+}
+
+#forecast {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.forecast-row {
+    display: grid;
+    grid-template-columns: 1fr 40px 70px;
+    align-items: center;
+    padding: 10px;
+    border: 1px solid #eeeeee;
+    border-radius: 8px;
+    background-color: white;
+    font-size: 13px;
+    transition: background-color 0.2s ease;
+}
+
+.forecast-row:hover {
+    background-color: #f5fafd;
+}
+
+.forecast-row span:first-child {
+    font-weight: bold;
+    color: #1A3C5E;
+}
+
+.forecast-row span:nth-child(2) {
+    text-align: center;
+}
+
+.forecast-row span:last-child {
+    text-align: right;
+    font-weight: bold;
+    color: #1A3C5E;
+}
+
+.animate-spin {
+    animation: spin 4s linear infinite;
+}
+
+.animate-bounce {
+    animation: bounce 2s ease-in-out infinite;
+}
+
+.animate-pulse {
+    animation: pulse 2.5s ease-in-out infinite;
+}
+
+@keyframes spin {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 0.8;
+        transform: scale(0.95);
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        align-items: flex-start;
+    }
+
+    main {
+        width: 100%;
+        min-height: 100vh;
+        border-radius: 0;
+    }
+
+    .top-navigation {
+        flex-direction: column;
+    }
+
+    .top-navigation button {
+        width: 100%;
+    }
+}

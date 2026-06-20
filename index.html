@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <main>
+        <header>
+        <!--header:contains App tittle ,search input,search button-->
+        <h1> [ ] Weather App</h1>
+        </header>
+
+        <!--B:unit toggle to show farhenit and celsus-->
+        <button id="unit-toggle" class="toggle-btn">Switch to F°</button>
+
+        <div class="top-navigation">
+        <input type="text" id="city-input" placeholder="Lagos">
+        <button id="search-button">Search</button>
+        </div>
+
+        <!--B:Search-history-->
+        <div id="search-history" class="history-container"></div>
+
+        <div>
+        <!--Error Section: contains error message when city is not found and loading message-->
+        <p id="error-message"></p>
+        <p id="loading-message"></p>
+        </div>
+
+        <div class="hero-section">
+        <!--Hero Section: contains weather icon,city name ,
+        country,temperature,weather description-->
+        <div id="weather-icon"class="animated-icon"></div>
+        <h2 id="location-display">
+             <span id="city-name"></span> <span id="country"></span>
+        </h2>
+        <p id="temperature"></p>
+        <p id="weather-description"></p>
+        </div>
+
+        <div class="stats-section">
+        <!--Stats Section: contains Humidity,wind speed,UV index 
+        using span to wrap the value-->
+        <div id="humidity">Humidity: <span class="value"></span></div>
+        <div id="wind-speed">Wind Speed: <span class="value"></span></div>
+        <div id="uv-index">UV Index: <span class="value"></span></div>
+        </div>
+
+        <div class="forecast-section">
+        <!--Forecast Section: contains 5 day forecast with date,weather icon,
+        temperature,weather description-->
+        <h3>5-DAY FORECAST</h3>
+        <div id="forecast"></div>
+        </div>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
